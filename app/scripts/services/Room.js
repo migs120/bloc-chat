@@ -3,15 +3,29 @@
 (function() {
 
       //function SongPlayer($rootScope, Fixtures) {
-       function Room($firebaseArray) {
+       function Room($firebaseObject) {
                                 
-           
-                                                var firebaseRef = new Firebase("https://popping-inferno-128.firebaseio.com");
+                                                rooms = {}
+                                                //var firebaseRef = new Firebase("https://popping-inferno-128.firebaseio.com");
                                                 //var rooms = $firebaseArray(firebaseRef.child('rooms'));
-                                                var rooms = $firebaseArray(firebaseRef);
-                                                return {
-                                                          all: rooms
-                                                        };
+                                               // rooms.all = firebaseRef.child("room1")
+                                              var arry = [] 
+                                                
+                                                var ref = new Firebase("https://popping-inferno-128.firebaseio.com/rooms");
+                                               /* (function(){ ref.orderByChild("messages").on("child_added", function(snapshot) {
+                                                arry.push( 'hello'
+                                                   // {all : snapshot.key() + " was "}
+                                                )
+                                                });})(); 
+                                                rooms.all = arry[0]  //*/
+                                                rooms.all = $firebaseObject(
+                                                                            ref//.child('messages')
+                                                                           
+                                                                           )
+                                                arry.push(rooms.all)
+                                                console.log(arry)
+                                                return rooms
+                                            
                                                         /*        
                                                   var SongPlayer = {};
                                                   var currentAlbum = Fixtures.getAlbum();
