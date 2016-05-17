@@ -1,7 +1,21 @@
-<div class="col-4 seebox height" id="leftAside" style="text-align:center;">
+<div class="col-4 seebox " id="leftAside" style="text-align:center;">
     <h1>{{landing.test}}</h1>
-    <h2>{{landing.room}}<h2>
-    <p>landing.html</p>
+    <h2>{{landing.room.room.room1}}</h2>
+        <br><h2>keys:{{landing.keys}}</h2>
+        
+        <br><h2>keys2:{{landing.keys2[1].messages[0]}} </h2>
+    
+    
+    
+    <br><h2 ng-repeat="xox in landing.room.room">{{xox}}<h2>
+    
+    
+    <br><p>messagerepeat</p><h2 ng-repeat="xox1 in landing.keys2[1].messages">{{xox1}}<h2>
+        
+    <br><p>messagerepeat2</p><h2 ng-repeat="xox2 in landing.keys4">{{xox2}}<h2>
+    
+    <p>landing.html</p> 
+       
 
 </div>
 <div class="col-8 seebox height" id="rightAside" >
