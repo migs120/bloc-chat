@@ -1,3 +1,5 @@
+
+
 <div class="col-4 seebox height" id="leftAside" style="text-align:center;">
 
     <h1>Rooms:</h1>
@@ -8,5 +10,7 @@
 </div>
 <div class="col-8 seebox height" id="rightAside" >
     
-    
+ <button type="button" class="btn btn-default" ng-click="open()">Create New UserName</button>  
+  <div ng-include="modal.html" ng-init="open()"></div>  
+    <p>{{userName.firstName}}</p>
 <div>

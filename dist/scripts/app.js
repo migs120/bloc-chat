@@ -17,11 +17,19 @@
                                                                                  controller: 'LandingCtrl as landing',
                                                                                  templateUrl: '/templates/landing.html'
                                                                                 })
+                                                              .state('modal', {
+                                                                                 url: '/modal',
+                                                                                 controller: 'ModalInstanceCtrl as modal ',
+                                                                                 templateUrl: '/templates/modal.html'
+                                                                                })
 
                                                      }
  
 
      angular
-         .module('blocChat', ['ui.router',"firebase"])
+         .module('blocChat', ['ui.router',"firebase"
+                             // ,'ngAnimate'
+                              , 'ui.bootstrap'
+                             ])
          .config(config);
  })();
