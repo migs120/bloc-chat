@@ -5,7 +5,11 @@
 ///*
 
 //var form =  $('#form1')
-angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope, $uibModalInstance, Room , items) {
+angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope
+                                                                      , $cookies
+                                                                      , $cookieStore 
+                                                                      ,$uibModalInstance
+                                                                      ,Room , items) {
    // console.log($scope)
     $scope.items = items;
     $scope.base = Room
@@ -14,8 +18,10 @@ angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope, $ui
     };
     console.log($("#form1").context.form1 )
     $scope.ok = function () {
-        console.log()
-        document.cookie = "username =" + $scope.firstname ;
+        //console.log($cookies)
+        //document.cookie = "username :" + $scope.firstname , "pass=123";
+        $cookieStore.put("username", $scope.firstname )
+        //document.cookie = "pass=123"
         //setCookie("username", $scope.firstname )
        // put(, value, [options])
         $uibModalInstance.close($scope.selected.item);

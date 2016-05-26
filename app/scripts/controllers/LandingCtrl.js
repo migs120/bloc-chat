@@ -1,6 +1,6 @@
 ///*
 (function () {
-    function LandingCtrl( Room , $scope, $uibModal) {
+    function LandingCtrl( Room , $scope, $uibModal, $cookies, $cookieStore) {
         //console.log($uibModal)
        // debugger
         this.test = "Hello world";
@@ -9,7 +9,7 @@
         this.rooms = Room.rooms
             
         $scope.items = ['item1', 'item2', 'item3'];
-
+        
         $scope.animationsEnabled = true;
         $scope.userName ={firstName:"John"}
 
@@ -42,11 +42,12 @@
         $scope.toggleAnimation = function () {
             $scope.animationsEnabled = !$scope.animationsEnabled;
         };
+        $scope.cookie = $cookieStore.get('username')
     }
 
     angular
         .module('blocChat')
-        .controller('LandingCtrl', ['Room', '$scope','$uibModal',LandingCtrl]);
+        .controller('LandingCtrl', ['Room', '$scope','$uibModal','$cookies','$cookieStore', LandingCtrl]);
 })();
 
 
