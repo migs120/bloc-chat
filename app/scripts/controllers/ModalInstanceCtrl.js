@@ -9,19 +9,37 @@ angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope
                                                                       , $cookies
                                                                       , $cookieStore 
                                                                       ,$uibModalInstance
-                                                                      ,Room , items) {
+                                                                      ,Room 
+                                                                      ,$firebaseObject
+                                                                      ,items) {
    // console.log($scope)
+    
     $scope.items = items;
-    $scope.base = Room
+    $scope.base = Room.rooms
     $scope.selected = {
-        item: $scope.items[0]
-    };
+                        item: $scope.items[0]
+                    };
+    
+    
     console.log($("#form1").context.form1 )
+     console.log(Room.base)
+     
+     
     $scope.ok = function () {
         //console.log($cookies)
         //document.cookie = "username :" + $scope.firstname , "pass=123";
         $cookieStore.put("username", $scope.firstname )
+        var newroom = new Firebase("https://popping-inferno-128.firebaseio.com/rooms/")// + $scope.newroom)
+        var newroomchild =newroom.child($scope.newroom)
+        newroomchild.set(
+                    {
+                    key: $scope.newroom,
+                    user: $scope.firstname,
+                    message: "start message"
+                    }
+                    )
         //document.cookie = "pass=123"
+        
         //setCookie("username", $scope.firstname )
        // put(, value, [options])
         $uibModalInstance.close($scope.selected.item);

@@ -1,22 +1,14 @@
- <div class="modal-header">
-    <h3 class="modal-title">I'm a modal!</h3>
-</div>
+ 
 <div class="modal-body">
-    <ul>
-        <li ng-repeat="item in items">
-            <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
-        </li>
-    </ul>
-    Selected: <b>{{ selected.item }}</b>
-</div>
+   
 <div class="modal-footer">
-    <p>firstname</p> <input ng-model="firstname"><br>
-    First Name:<br>
-    <input id="form1" type="text" ng-model="user.firstName"><br><br>
+    <p>Enter A UserName</p> <input ng-model="firstname"><br>
+     <p>Create a Room</p> <input ng-model="newroom"><br>
+  
     
      <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
     <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-    <br><p>hello{{base.all.rooms}}</p>
+    <p>{{base}}</p>
 </div>
 
 
