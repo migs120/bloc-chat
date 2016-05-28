@@ -1,35 +1,16 @@
-
-
 <div class="col-4 seebox height" id="leftAside" style="text-align:center;">
 
     <h1>Rooms:</h1>
-    <br><p ng-repeat="xox in landing.rooms ">{{xox.key}}</p>  
-        
+    <br>
+    <p ng-repeat="xox in landing.rooms ">{{xox.key}}</p>
+
     <p>landing.html</p>
-    
-    
-     <h1>Rooms:</h1>
-    <br><p ng-repeat="xox in landing.rooms ">hh:{{xox.miguroom.key}}</p>  
-        
-    <p>landing.html</p>
-    
-    
-<!--    <br><p ng-bind='cookie'></p>-->
+
 
 </div>
-<div class="col-8 seebox height" id="rightAside" >
-    
- <button type="button" class="btn btn-default" ng-click="open()">Create New UserName</button>  
-  <div ng-include="modal.html" ng-init="open()"></div>  
-    <p>{{userName.firstName}}</p>
-    
-    
-     
-    
-    
-    
-    
-<div>
-    
-    
-   
+<div class="col-8 seebox height" id="rightAside">
+
+    <button type="button" class="btn btn-default" ng-click="open()">Create New UserName</button>
+    <div ng-include="modal.html" ng-init="open()"></div>
+
+    <div>
