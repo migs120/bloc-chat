@@ -3,10 +3,12 @@
 
         this.test = "Hello world";
 
-        this.room = Room.all
-        this.rooms = Room.rooms
-
-        $scope.items = ['item1', 'item2', 'item3'];
+        //{{landing.rooms}}
+        this.rooms = Room.Roomsbase();
+        this.currentRoom = Room.currentRoombase();  
+        this.currentRoomMessages = Room.currentRoomMessages()
+        this.Room = Room
+     
 
         $scope.animationsEnabled = true;
         $scope.userName = {
@@ -35,7 +37,7 @@
             modalInstance.result.then(function (selectedItem) {
                 $scope.selected = selectedItem;
             }, function () {
-                $log.info('Modal dismissed at: ' + new Date());
+                //$log.info('Modal dismissed at: ' + new Date());
             });
         };
 

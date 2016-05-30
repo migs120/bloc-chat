@@ -2,7 +2,10 @@
 
     <h1>Rooms:</h1>
     <br>
-    <p ng-repeat="xox in landing.rooms ">{{xox.key}}</p>
+    <ul ng-repeat="xox in landing.rooms ">
+        <li><a ng-click="landing.Room.Roomclick($event)">{{xox.key}}</a></li>
+    
+    </ul>
 
     <p>landing.html</p>
 
@@ -12,5 +15,24 @@
 
     <button type="button" class="btn btn-default" ng-click="open()">Create New UserName</button>
     <div ng-include="modal.html" ng-init="open()"></div>
-
+    <p style="text-align:center;">curent Room: {{landing.Room.currentRoom}} </p><br>
+<!--    <p style="text-align:center;" ng-repeat="lol in landing.Room.currentRoomRef() ">mess:{{lol}}</p>-->
+    <p>-----{{landing.currentRoom}}</p><br><br>
+     <p style="text-align:center;" ng-repeat="lol in landing.currentRoom ">mess:{{lol.message}}</p><br><br>
+    
+<!--=================test two===============================    -->
+     <p style="text-align:center;">curent Room: {{landing.currentRoomMessages}} </p><br>
+    
+     <p style="text-align:center;" ng-repeat="lol in landing.currentRoomMessages ">mess2:{{lol}}</p>
+    
+    
     <div>
+        
+        
+        
+        
+        
+        
+        
+        
+        

@@ -4,17 +4,16 @@ angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope
         , $uibModalInstance
         , Room
         , $firebaseObject
-        , items) {
+      
+            ) {
 
-        $scope.items = items;
+      
         $scope.base = Room.rooms
-        $scope.selected = {
-            item: $scope.items[0]
-        };
+      
 
 
-        console.log($("#form1").context.form1)
-        console.log(Room.base)
+       // console.log($("#form1").context.form1)
+       // console.log(Room.base)
 
 
         $scope.ok = function () {
@@ -25,16 +24,16 @@ angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope
             var newroomchild = newroom.child($scope.newroom)
 
             newroomchild.set({
-                key: $scope.newroom
-                , room_messages: [
-                    {
-                        user: $scope.firstname
-                        , message: "start message"
-                                             }
-                                           ]
-            })
+                              key: $scope.newroom
+                             ,room_messages: [
+                                                {
+                                                user: $scope.firstname
+                                                ,message: "start message2"
+                                                }
+                                             ]
+                            })
 
-            $uibModalInstance.close($scope.selected.item);
+            $uibModalInstance.close();
 
         };
 
