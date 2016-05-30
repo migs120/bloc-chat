@@ -17,13 +17,16 @@
     <div ng-include="modal.html" ng-init="open()"></div>
     <p style="text-align:center;">curent Room: {{landing.Room.currentRoom}} </p><br>
 <!--    <p style="text-align:center;" ng-repeat="lol in landing.Room.currentRoomRef() ">mess:{{lol}}</p>-->
-    <p>-----{{landing.currentRoom}}</p><br><br>
-     <p style="text-align:center;" ng-repeat="lol in landing.currentRoom ">mess:{{lol.message}}</p><br><br>
+<!--    <p>-----{{landing.currentRoom}}</p><br><br>-->
+<!--     <p style="text-align:center;" ng-repeat="lol in landing.currentRoom ">mess:{{lol.message}}</p><br><br>-->
     
 <!--=================test two===============================    -->
-     <p style="text-align:center;">curent Room: {{landing.currentRoomMessages}} </p><br>
+<!--     <p style="text-align:center;">curent Room: {{landing}} </p><br>-->
     
-     <p style="text-align:center;" ng-repeat="lol in landing.currentRoomMessages ">mess2:{{lol}}</p>
+     <p style="text-align:center;" ng-repeat="lol in landing.Room.NewRoomRef ">message: {{lol.message}}</p>
+    <h3 style="text-align:center;">test 2</h3>
+    
+    <p style="text-align:center;" ng-repeat="lol in landing.NewRoomR ">message: {{lol.message}}</p>
     
     
     <div>

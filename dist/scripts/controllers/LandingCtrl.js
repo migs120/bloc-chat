@@ -5,10 +5,15 @@
 
         //{{landing.rooms}}
         this.rooms = Room.Roomsbase();
+        this.Room = Room
+        
+        //does not update except at first \|/
         this.currentRoom = Room.currentRoombase();  
         this.currentRoomMessages = Room.currentRoomMessages()
-        this.Room = Room
-     
+        this.NewRoomR = Room.NewRoomRef
+
+        
+        
 
         $scope.animationsEnabled = true;
         $scope.userName = {
