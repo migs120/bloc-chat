@@ -4,7 +4,8 @@
 
      
        function Room(
-    $rootScope
+         $rootScope
+       // ,$scope
         ,$firebaseObject
         ,$firebaseArray
         ,$document) {
@@ -14,15 +15,15 @@
                                        var Room = { 
                                             
                                             
-                                            currentRoom: 'timroom',// currentRoom.name
-                                            currentUser:'',
+                                            currentRoom: '',// currentRoom.name
+                                            currentUser:'Anonymous',
                                             NewRoomRef: '',
                                         
                                            
                                             RoomsRef : function() { return new Firebase("https://popping-inferno-128.firebaseio.com/rooms/") },
                             /*allRooms*/    Roomsbase: function(){ 
-                                                            return $firebaseObject(this.RoomsRef()) 
-                                                            },
+                                                                  return $firebaseObject(this.RoomsRef()) 
+                                                                  },
                                            
                                            currentRoomRef: function() { return new Firebase("https://popping-inferno-128.firebaseio.com/rooms/" + this.currentRoom +"/"  ) },                     
                          /*currentRoom*/   currentRoombase:  function(){ 
@@ -32,7 +33,7 @@
                                                                         },
                                           // this.messages = currentRoom.messages
                                            currentRoomMessages: function(){
-                                               
+                                                                            /*  // was experimental but has an error and not needed just for expample refrence
                                                                            this.currentRoomRef().orderByChild("room_messages").on("child_added", function(snapshot) {
                                                                                 // console.log(snapshot.key() + " was " + snapshot.val().height + " meters tall");
                                                                                 //return snapshot.val().message
@@ -42,20 +43,40 @@
                                                                                console.log(arry)
                                                                                return snapshot.val();
                                                                                                                                                         }); 
+                                                                                //*/
                                                
                                                                           },
                                           // reename roomclick to setRoom then inside function you want to update all the variables you need
                                            Roomclick: function($document){
-                                                                  console.log( $document.target.firstChild.data)
-                                                                  this.currentRoom = $document.target.firstChild.data;
-                                                                  this.NewRoomRef = this.currentRoombase()
-                                                                 // console.log(this.currentRoomRef())
-                                                                  return $document;
-                                                                }
+                                                                          console.log( $document.target.firstChild.data)
+                                                                          this.currentRoom = $document.target.firstChild.data;
+                                                                          this.NewRoomRef = this.currentRoombase()
+                                                                         // console.log(this.currentRoomRef())
+                                                                          return $document;
+                                                                        },
                                            
-                                         
-                                                        
-                                         
+                                           RoomSubmit: function(){
+                                                              /*    console.log("submit worked \n"
+                                                                              ,$rootScope
+                                                                              ,$rootScope.$$childHead.cookie
+                                                                              ,'\n'
+                                                                              , $rootScope.$$childHead.text
+                                                                              //, $document.target.firstChild.data
+                                                                              ,'test1= '+ $('#tex1').val()
+                                                                             )  //*/
+                                                                  this.currentRoombase().$add({ user: this.currentUser 
+                                                                                              ,message: $rootScope.$$childHead.text
+                                                                                            
+                                                                                            })
+                                                                  $('#tex1').val('')
+
+                                                                },
+                                           RoomSubmitUser: function(){
+                                                                        this.currentUser = $('#user1').val()
+                                                                    
+                                                                      }
+                                            
+                                           
                                                     
                                              };
                                            // console.log(Room)
@@ -69,10 +90,12 @@
                                                  .module('blocChat')
                                            
                                              .factory('Room', ['$rootScope'
+                                                               //,'$scope'
                                                                ,'$firebaseObject'
                                                                ,'$firebaseArray'
                                                                ,'$document'
-                                                               ,Room]);
+                                                               ,Room]
+                                                     );
     
                                                 
      
@@ -80,6 +103,7 @@
 
 
 
-
+//       $$childHead.text
+//       $$childHead.cookie    for cookie username
 
 

@@ -1,4 +1,5 @@
-angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope
+angular.module('blocChat').controller('ModalInstanceCtrl', function (
+         $scope
         , $cookies
         , $cookieStore
         , $uibModalInstance
@@ -13,7 +14,7 @@ angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope
 
 
        // console.log($("#form1").context.form1)
-       // console.log(Room.base)
+       //console.log(Room)
 
 
         $scope.ok = function () {
@@ -21,10 +22,12 @@ angular.module('blocChat').controller('ModalInstanceCtrl', function ($scope
 
             $cookieStore.put("username", $scope.firstname)
             var newroom = new Firebase("https://popping-inferno-128.firebaseio.com/rooms/") // + $scope.newroom)
-            var newroomchild = newroom.child($scope.newroom)
-
+            var userroom = $scope.newroom ? $scope.newroom : Math.round(Math.random() * 100000000);
+            var newroomchild = newroom.child(userroom)
+            Room.currentUser = $scope.firstname
             newroomchild.set({
-                              key: $scope.newroom
+                             // key: $scope.newroom
+                              key: userroom
                              ,room_messages: [
                                                 {
                                                 user: $scope.firstname
