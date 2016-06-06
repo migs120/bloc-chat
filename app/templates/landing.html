@@ -1,10 +1,10 @@
-<div class="col-4 seebox height" id="leftAside" style="text-align:center;">
+<div class="col-4 seebox" id="leftAside" style="text-align:center; height:1000px;">
 
     <h1>Rooms:</h1>
     <br>
     <ul ng-repeat="xox in landing.rooms ">
         <li><a ng-click="landing.Room.Roomclick($event)">{{xox.key}}</a></li>
-    
+
     </ul>
 
     <p>landing.html</p>
@@ -12,38 +12,32 @@
 
 </div>
 <div class="col-8 seebox height" id="rightAside">
-    
-    
-<form ng-submit="landing.Room.RoomSubmitUser()" >
-  Enter a Username
-  <input type="text" id='user1' name="text" />
-  <input type="submit" id="submit" value="Submit" />
-</form>
 
-    <button type="button" class="btn btn-default" ng-click="open()">Create New UserName</button>
+
+    <form ng-submit="landing.Room.RoomSubmitUser()" class="center">
+        Enter a Username
+        <input type="text" id='user1' name="text" />
+        <input type="submit" id="submit" value="Submit" />
+    </form>
+
+    <button type="button" class="btn btn-default" ng-click="open()">Create New
+        <br> Room</button>
     <div ng-include="modal.html" ng-init="open()"></div>
-    <p style="text-align:center;">curent Room: {{landing.Room.currentRoom}} </p><br>
-<!--    <p style="text-align:center;" ng-repeat="lol in landing.Room.currentRoomRef() ">mess:{{lol}}</p>-->
-<!--    <p>-----{{landing.currentRoom}}</p><br><br>-->
-<!--     <p style="text-align:center;" ng-repeat="lol in landing.currentRoom ">mess:{{lol.message}}</p><br><br>-->
-    
-<!--=================test two===============================    -->
-<!--     <p style="text-align:center;">curent Room: {{landing}} </p><br>-->
-    
-     <p style="text-align:center;" ng-repeat="lol in landing.Room.NewRoomRef ">{{lol.user}}: {{lol.message}}</p>
-    
-    
-<!--    <h3 style="text-align:center;">test 2</h3>-->
-<!--    <br><p>{{landing.Room}}</p>-->
-    
-<!--    <p style="text-align:center;" ng-repeat="lol in landing.NewRoomR ">message: {{lol.message}}</p>-->
-<form ng-submit="landing.Room.RoomSubmit($event)" >
-  Enter text and hit enter:
-  <input type="text" id='tex1' ng-model="text" name="text" />
-  <input type="submit" id="submit" value="Submit" />
-  
-</form>
-    
+    <p style="text-align:center;"><b>Curent Room:</b> {{landing.Room.currentRoom}} </p>
+    <p style="text-align:center;"><b>AS:</b> {{landing.Room.currentUser}} </p>
+    <br>
+
+    <p style="text-align:center;" ng-repeat="lol in landing.Room.NewRoomRef "><b>{{lol.user}}:</b> {{lol.message}}</p>
+
+
+
+    <form class='center' ng-submit="landing.Room.RoomSubmit($event)">
+        Enter text and hit enter:
+        <input type="text" id='tex1' ng-model="text" name="text" />
+        <input type="submit" id="submit" value="Submit" />
+
+    </form>
+
     <div>
         
         

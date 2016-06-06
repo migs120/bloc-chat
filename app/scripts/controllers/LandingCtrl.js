@@ -8,8 +8,7 @@
         this.Room = Room
         
         //does not update except at first \|/
-        this.currentRoom = Room.currentRoombase();  
-        this.currentRoomMessages = Room.currentRoomMessages()
+        this.currentRoom = Room.currentRoombase(); 
         this.NewRoomR = Room.NewRoomRef
 
         
