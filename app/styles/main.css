@@ -99,6 +99,7 @@ html {
     .col-10 {width: 83.33%;}
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
+    #leftAside{height:1000px;}
    
 }
   
@@ -107,7 +108,7 @@ html {
           /*  border-style:solid; border-color:grey; border-width:20px; */
           }
   .seebox{
-           outline-style:dotted; 
+/*           outline-style:dotted; */
           }
   .center { margin-left:auto;
             margin-right:auto; 
