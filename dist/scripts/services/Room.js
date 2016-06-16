@@ -11,7 +11,7 @@
         ,$document) {
         
                                 
-                                       var Room = { 
+                       var Room = { 
                                             
                                             
                                             currentRoom: '',// currentRoom.name
@@ -57,7 +57,7 @@
                                                     
                                              };
                                            // console.log(Room)
-                                            return Room;
+                             return Room;
                                                         
                                          
                                                     

@@ -48,7 +48,7 @@
         $scope.toggleAnimation = function () {
             $scope.animationsEnabled = !$scope.animationsEnabled;
         };
-        $scope.cookie = $cookieStore.get('username')
+        $scope.cookie = $cookieStore.get('userName')
     }
 
     angular
